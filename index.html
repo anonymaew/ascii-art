@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>ASCII art</title>
+	<link rel="icon" type="image/png" href="icon.png">
+
+	<script src="libraries/p5.js"></script>
+	<script src="sketch.js"></script>
+
+	<link href="https://fonts.googleapis.com/css2?family=Kanit&amp;display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<style>
+		#can {
+			width: 480px;
+			height: 480px;
+			overflow: scroll;
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+		<h1>Image to ASCII</h1>
+	</div>
+	<div id="introduction">
+		<p>Turn you image into beauitful characters!</p>
+		<div>
+			<img src="example.gif" alt="">
+		</div>
+	</div>
+	<div id="part1">
+		<p>Step 1: Insert your image file</p>
+		<label for="file"></label>
+		<input type="file" id="img" accept="image/*" onchange="grayimg(this)"><br><br>
+		<p>*it should be smaller than 1280*1280 pixels</p>
+		<p>The image is processed locally</p>
+		<p> no images are sent back to servers</p>
+	</div>
+	<div id="part2" style="display: none;">
+		<p>Step 2: Choose your character style</p>
+		<label for="font-fam">Font family</label>
+		<select name="font-fam" id="font-fam">
+			<option value="consolas">Consolas</option>
+		</select>
+		<label for="font-size">size</label>
+		<input id="font-size" type="number" min="4" value="6" max="12" style="color: black;" onchange="showExample()">
+		<div style="margin-top:12px;height:12px">
+			<p id="font-example" style="font-family: Consolas,monaco,monospace;font-size:6px;">This is how your font will look like</p>
+		</div>
+	</div>
+	<div id="part3" style="display: none;">
+		<p>Step 3: Generate text!</p>
+		<button onclick="findval()">Generate</button>
+	</div>
+	<div id="loading" style="display: none;">
+		<p>The image is processing</p>
+		<p>It will take around 15 seconds</p>
+		<img src="loading.gif" alt="">
+		<p>Here is a dancing banana</p>
+	</div>
+	<div id="part4" style="display: none;">
+		<div id="can" style="width: 480px;height: 480px;overflow:scroll;"></div>
+		<div id="last">
+			<p>Step 4: Save your result</p>
+			<button onclick="saveres()">Save</button>
+	</div>
+	</div>
+</body>
+
+</html>

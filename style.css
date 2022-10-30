@@ -1,0 +1,42 @@
+
+		* {
+			font-family: 'Kanit', sans-serif;
+			text-align: center;
+		}
+
+		body {
+			background-color: #222;
+		}
+
+		div {
+			display: block;
+			margin: auto;
+			margin-top: 24px;
+			width: auto;
+		}
+
+		h1,
+		p,
+		label,
+		input {
+			margin: auto;
+			color: white;
+		}
+
+		h1 {
+			color: orange;
+		}
+
+		button,
+		input {
+			background-color: white;
+			border-style: none;
+			border-radius: 10px;
+			outline: none;
+			transition-duration: 250ms;
+		}
+
+		button:active {
+			filter: brightness(75%);
+			transition-duration: 250ms;
+		}
